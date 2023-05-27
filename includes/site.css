@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); 
+*, *::before,* ::after{
+   
+    font-family:"Montserrat" , sans-serif  ;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background: #EEF2F4;
+}
+
+
+/****Login ****/
+.log{
+    padding-top: 15px;
+}
+
+.loginbox{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fffdfa;
+    background-color:#EEF2F4;
+    margin-top: 40px;
+}
+.loginbox .box{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    width: 400px;
+    height: 400px;
+    color: #252324;
+    background-color:white;
+    border-radius: 10px;
+    border-width: 2px;
+    padding:15px;
+   
+}
+h2{
+    text-align: center;
+}
+
+h1 {
+    margin-top:10px;
+    display:flex;
+    font-size: 12px;
+    color: gray;
+  }
+h1:before, h1:after {
+    
+    content:'';
+    flex:1;
+    border-bottom:groove 2px;
+    margin:auto 0.25em;
+    
+}
+
+.loginbox p{
+    margin: 0;
+    padding: 10;
+    font-weight: 300;
+
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+
+.loginbox input[type ="text"],input[type="password"]{
+    
+    /*border: 1px solid #666666;
+    background: transparent;
+    background-color: #F5F5F5;
+    outline: none;
+    height: 35px;
+    border-radius: 5px;
+    color:#252324;
+    font-size: 15px;*/
+
+    border: 1px solid #ced4da;
+    background: transparent;
+    background-color: #FFF;
+    font-weight: 400;
+    outline: none;
+    height: 30px;
+    border-radius: 0.25rem;
+    background-clip: padding-box;
+    color:#495057;
+    font-size: 0.7rem;
+
+}
+
+.loginbox input[type="submit"]{
+    border: solid;
+    border-width: 1px;
+    border-color:#2e2bd8 ;
+    outline: none;
+    height: 30px;
+    background: #2e2bd8;
+    color: #fff;
+    font-size: 15px;
+    border-radius:10px ;
+    
+}
+.loginbox input[type="submit"]:hover{
+    cursor: pointer;
+    background:#fff;
+    transition-duration:0.3s;
+    color: #000;
+}
+.loginbox input[type="text"]:hover{
+    cursor: pointer;
+    background:	whitesmoke;
+    transition-duration:0.3s;
+    color: #000;
+}
+
+
+/***********Register***************/
+.reg{
+    padding-top: 15px;
+ }
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   position: relative;
+    background-color: #fff;
+    color: red;
+    width: 400px;
+    height: 50px;
+  margin-left: auto;
+   margin-right: auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    animation: mymove 0.3s ;
+    
+}
+.error{animation-timing-function: ease-in-out;}
+@keyframes mymove {
+    
+    from {top: -50px;}
+    to {top: 10px;}
+  }
+
+
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.register .box{
+   
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    width: 400px;
+    height: 550px;
+    color: #252324;
+    background-color:white;
+    border-radius: 10px;
+    border-width: 2px;
+    padding:15px;
+   
+}
+.box h2{
+    text-align: center;
+}
+
+.box h1 {
+    margin-top:10px;
+    display:flex;
+    font-size: 13px;
+    color: gray;
+  }
+.box h1:before, h1:after {
+    
+    content:'';
+    flex:1;
+    border-bottom:groove 2px;
+    margin:auto 0.25em;
+    
+}
+
+.register p{
+    margin: 0;
+    padding: 2px;
+    font-weight: 300;
+
+}
+
+.register input{
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+
+.register input[type ="text"],input[type="password"]{
+    /*border: none;
+    border-bottom: 1px solid #230bfb;
+    background: transparent;
+    background-color: #F5F5F5;
+    outline: none;
+    height: 30px;
+    border-radius: 0px;
+    
+    color:#252324;
+    font-size: 12px;*/
+
+    border: 1px solid #ced4da;
+    background: transparent;
+    background-color: #FFF;
+    font-weight: 400;
+    outline: none;
+    height: 30px;
+    border-radius: 0.25rem;
+    background-clip: padding-box;
+    color:#495057;
+    font-size: 0.7rem;
+    
+
+}
+
+.register input[type="submit"]{
+    border: solid;
+    border-width: 1px;
+    border-color:#2e2bd8 ;
+    outline: none;
+    height: 25px;
+    background: #2e2bd8;
+    color: #fff;
+    font-size: 15px;
+    border-radius:10px ;
+    
+}
+.register input[type="submit"]:hover{
+    cursor: pointer;
+    background:#fff;
+    transition-duration:0.3s;
+    color: #000;
+}
+.register input[type="text"]:hover{
+    cursor: pointer;
+    background:	whitesmoke;
+    transition-duration:0.3s;
+    color: #000;
+}
+.register .terms{
+    font-size: 11px;
+}
+
+/****Navbar****/
+/*.navlinks{
+    background-color: #000;
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    
+}
+.navlinks li{
+    justify-content: right;
+    padding-right: 20px;
+    background-color: red;
+}*/
+
+/*records*/
+.profile_Records{
+    display: flex;
+    width: 80%;
+   
+    
+}
+.dispRecords{
+    padding-top: 0px;
+    width: 100%;
+    background: #EEF2F4;
+    border-radius: 5px;
+   
+}
+.dispRecords table{
+    width: 100%;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    
+}
+.dispRecords .records_heading{
+    background: #2e2bd8;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #2e2bd8;
+
+}
+.dispRecords th {
+    height: 20px;
+    font-size: 12px;
+    padding: 8px;
+    background-color: #fff 
+}
+.dispRecords tr{
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px rgb(0 0 0 / 20%);
+    background-color: #fff ;
+}
+.dispRecords img{
+    width: 60%;
+}
+/*img{
+ 
+    max-width: 100%;
+    height: 160px;
+    width: 200px;
+    border-radius: 3px;
+}*/
+.sales{
+    padding-left: 400px;
+}
+.sales table{
+    width: 100%;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    
+}
+.sales th {
+    height: 20px;
+    font-size: 12px;
+    padding: 8px;
+    background-color: #fff 
+}
+.sales tr{
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px rgb(0 0 0 / 20%);
+    background-color: #fff ;
+}
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+    }
+}
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
