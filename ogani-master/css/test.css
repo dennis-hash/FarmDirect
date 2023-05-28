@@ -1,0 +1,101 @@
+/* Reset default margins and paddings */
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Apply a background color */
+  body {
+    background-color: #f2f2f2;
+  }
+  
+  /* Center the page content */
+  .containerr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Main container */
+  .a {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  
+  /* Right section */
+  .right {
+    margin-left: 20px;
+  }
+  
+  /* Contacts section */
+  .contacts {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Modal */
+  .modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+  
+  /* Modal Header */
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Modal Body */
+  .modal-body {
+    color: #333;
+  }
+  
+  /* Overlay */
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  
+  /* Anchor tag styles */
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Close button styles */
+  .close-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+  }
+  
+  /* Error message */
+  .error {
+    color: red;
+  }
+  
+  /* Add your additional styles here */
+  
+  
