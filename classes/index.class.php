@@ -75,8 +75,8 @@
                //'created_at' => $row['created_at']
            // );
             //array_push($post_arr['data'], $post_item);
-                 $this->id=$row['userID'];
-                 $this->prodid=$row['productID'];
+                $this->id=$row['userID'];
+                $this->prodid=$row['productID'];
                 $this->productName = $row['productName'];
                 $this->productPrice = $row['price'];
                 $this->productImage = $row['imagePath'];
@@ -91,17 +91,32 @@
                 $curr_time=new DateTime(date('Y-m-d H:i:s'));
                 $this->difference=$created_at->diff($curr_time);
                 $this->difference = $this->difference->format('%H');
-                echo "<a class='product' href='../includes/product_page.php?title=".$this->productName."=".$this->created_at."=".$this->id."=". $this->prodid."'>
+                echo "
+                   <div class = 'a'>
+                   <a href='product_page.php?title=".$this->productName."=".$this->created_at."=".$this->id."=". $this->prodid."'>
+                    <div class='featured__item__pic set-bg' data-setbg='$this->productImage'>
+                        
+                    </div>
+                    <div class='featured__item__text'>
+                        <h6><a href='#'>$this->productName</a></h6>
+                        <h5>$this->productPrice</h5>
+                    </div>
+                    </a>
+                    </div>
+                
+                ";
+
+                // echo "<a class='col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat' href='../includes/product_page.php?title=".$this->productName."=".$this->created_at."=".$this->id."=". $this->prodid."'>
     
-                    <!-- <div class = 'prodImage'> <img src='$this->productImage' alt='$this->productName'> </div>-->
-                    <div class='prod'>
-                    <div class = 'prodImage'> <img src='$this->productImage' alt='$this->productName'> </div>
-                    <div class = 'prodname'>  <p>$this->productName </p></div>
-                    <div class = 'prodprice'> <p>Ksh $this->productPrice </p></div>
-                    <div class = 'prodcategory'> <p>Category: $this->category </p></div>
+                //     <!-- <div class = 'prodImage'> <img src='$this->productImage' alt='$this->productName'> </div>-->
+                //     <div class='prod'>
+                //     <div class = 'prodImage'> <img src='$this->productImage' alt='$this->productName'> </div>
+                //     <div class = 'prodname'>  <p>$this->productName </p></div>
+                //     <div class = 'prodprice'> <p>Ksh $this->productPrice </p></div>
+                //     <div class = 'prodcategory'> <p>Category: $this->category </p></div>
     
-                    <div class = 'prodlocation'> <p><img class = 'icon' src='../images/location-dot-solid.svg' alt=''>$this->county, $this->subcounty </p></div>
-                    <div class = 'prodtime'><p> Posted:$this->difference Hrs ago</p></div></div></a>";
+                //     <div class = 'prodlocation'> <p><img class = 'icon' src='../images/location-dot-solid.svg' alt=''>$this->county, $this->subcounty </p></div>
+                //     <div class = 'prodtime'><p> Posted:$this->difference Hrs ago</p></div></div></a>";
                    
                
             }

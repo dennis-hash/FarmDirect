@@ -67,7 +67,7 @@
     </header>
    
     <!--side bar-->
-   <!-- <aside class="sidebar">
+   <aside class="sidebar">
         <ul>
             <li><a href="#">Agroproducts</a></li>
             <li><a href="#">Farm Machinery</a></li>
@@ -78,7 +78,7 @@
             <li><a href="#">Agroservices</a></li>
             
         </ul>
-    </aside>-->
+    </aside>
     
     <div class="allProducts"></div>
     

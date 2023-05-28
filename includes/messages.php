@@ -131,7 +131,7 @@ foreach($num_unique as $num){
         </div>
 
     </div>
-</body>
+
 <script>
    function show_chat(sender_id,my_id){
        
