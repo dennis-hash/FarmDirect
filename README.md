@@ -2,7 +2,8 @@
 # ABSTRACT
 Agricultural marketing encompasses all activities that add value to agricultural products as they move from rural agricultural production areas to final urban consumption areas. A successful and productive marketing system is required to ensure fair returns to farmers, but this sector receives little attention in Kenya.An effort has been made in this research to design and implement a Farm product and marketing system for farmers to showcase their agricultural products. Most farmers confuse marketing efficiency with marketing margins, physical losses, and market competition. HTML, CSS, JAVASCRIPT, PHP, and SQL are the programming languages used. Because this is a web-based application, web-based programming was used.
 
-**Problems facing existing system	
+**Problems facing existing system**
+
 All of these are issues with the current Agricultural Marketing Information System:
 i. A lack of transparency in farm produce prices.
 
