@@ -81,22 +81,60 @@ class dd {
                     $this->created_at = $row['created_at'];
                     session_start();
                     $_SESSION['prod_id']=$this->id;
-                    echo "<div class='products'>
-               
-                            <div class='prods'>
-                            <div class = 'prodImage'> <img src='$this->productImage' alt='$this->productName'> </div>
-                            <div class = 'prodname'>  <p>$this->productName </p></div>
-                            <div class = 'prodprice'> <p>Ksh $this->productPrice </p></div>
-                            <div class = 'prodcategory'> <p>Category: $this->category </p></div>
-                            <div class = 'proddesc'> <p>Description:$this->productDescription</p></div>
-                            <!--<div class = 'prodquan'> <p>Quantity: $this->quantity</p></div>-->
-                            <div class = 'prodlocation'> <p><img class = 'icon' src='../images/location-dot-solid.svg' alt=''>$this->county, $this->subcounty </p></div>
-                            <div class = 'prodtime'><p> Posted:$this->difference Hrs ago</p></div>
-                            <div class = 'prodquan'> <p>Quantity: $this->quantity</p></div>
-                            <!--<div class = 'buy'><p><button onclick='buy()'> Buy</button></p></div>-->
-                   </div>
-                   <div class = 'buy'><p><button onclick='buy()'> Buy</button></p></div>
-                   ";
+
+                    echo "
+                    <main class='container'>
+
+                    <!-- Left Column / Headphones Image -->
+                    <div class='left-column'>
+                
+                      <img data-image='red' class='active' src='$this->productImage' alt=''>
+                    </div>
+              
+              
+                    <!-- Right Column -->
+                    <div class='right-column'>
+              
+                      <!-- Product Description -->
+                      <div class='product-description'>
+                        <span>Category: $this->category </span>
+                        <h1>$this->productName</h1>
+                        <p>$this->productDescription</p>
+                      </div>
+              
+                      <!-- Product Configuration -->
+                      <div class='product-configuration'>
+              
+                        <!-- Product Color -->
+                        <div class='product-color'>
+                          <span>Quantity: $this->quantity</span>
+              
+              
+                        </div>
+              
+                        <!-- Cable Configuration -->
+                        <div class='cable-config'>
+                          <span>Location</span>
+              
+                          <div class='cable-choose'>
+                            <button>$this->county</button>
+                            <button>$this->subcounty</button>
+                            
+                          </div>
+              
+                          <a href='#'>Posted:$this->difference Hrs ago</a>
+                        </div>
+                      </div>
+              
+                      <!-- Product Pricing -->
+                      <div class='product-price'>
+                        <span>Ksh $this->productPrice</span>
+                        <a onclick='buy()' class='cart-btn'>Buy</a>
+                      </div>
+                    </div>
+                  </main>
+                    ";
+              
                 }
               
     } 
@@ -149,40 +187,54 @@ class dd {
            
         }
         echo "
-        <div class='buy_form'>
-        <form class='buy_form' action='/' method='post' name='form' target='_blank'
-        onSubmit='handleFormSubmit(this); return false;'>
-        <div class = 'img'> <img src='$this->productImage' > </div>
-        <div class = 'name'>  <p>$this->productName </p></div>
-        <div class = 'price'> <p>Ksh $this->productPrice &nbsp &nbsp &nbsp </p></div>
-        
-        <p>Quantity:</p>
-        <input type='text' name='phone' id='productname' value='$this->productName'hidden>
-        <input type='text' name='phone' id='sender_id' value='$this->userID'hidden>
-        <input type='number' name='quantity' id='quantity' value='1'  onchange='addPrice($this->productPrice)' min='1'required>
-        <p>Confirm Phone<a style='color:red;'>*</a></p>
-        <input type='text' name='phone' id='phone' value='$this->userPhone'required>
-        <p>Confirm Email<a style='color:red;'>*</a></p>
-        <input type='text' name='email' id='email' value='$this->userEmail'required>
-        <p>Delivery Location<a style='color:red;'>*</a></p>
-        <input type='text' name='address' id='address' value='$this->userAddress'required>
-        <p>Payment Method<a style='color:red;'>*</a></p>
-        <p><label class='container'>Pay On Delivery
-        <input type='radio' id='pod' name='radio' value='pod'>
-        <span class='checkmark'></span>
-        </label>
-        <label class='container'>Mpesa
-        <input type='radio' id='mpesa' name='radio' value='mpesa'>
-        <span class='checkmark'></span>
-        </label></p>
-       
-      
-        <p>Total Amount</p>
-        <input type='text' name='total' id='total' value='$this->productPrice' disabled>
-        <p></p>
-        <input class='button' type='submit' value='Send Request' >
-        </form>
-        </div>
+        <main class='container'>
+
+                    <!-- Left Column / Headphones Image -->
+                    <div class='left-column'>
+                
+                      <img data-image='red' class='active' src='$this->productImage' alt=''>
+                    </div>
+              
+              
+                    <!-- Right Column -->
+                    <div class='right-column'>
+              
+                      <!-- Product Description -->
+                      <div class='product-description'>
+                        <span>Category: $this->category </span>
+                        <h1>$this->productName</h1>
+                        <p>$this->productDescription</p>
+                      </div>
+              
+                      <!-- Product Configuration -->
+                      <div class='product-configuration'>
+              
+                        <!-- Product Color -->
+                        <div class='product-color'>
+                          <span>Quantity: $this->quantity</span>
+                        </div>
+
+                        <form class='buy_form' action='/' method='post' name='form' target='_blank'
+                        onSubmit='handleFormSubmit(this); return false;'>
+                        <input type='text' name='phone' id='phone' value='$this->userPhone'required>
+                        <p>Confirm Email<a style='color:red;'> *</a></p>
+                        <input type='text' name='email' id='email' value='$this->userEmail'required>
+                        <p>Delivery Location<a style='color:red;'> *</a></p>
+                        <input type='text' name='address' id='address' value='$this->userAddress'required>
+                       
+                        </label></p>
+                        <p>Total Amount</p>
+                        <input type='text' name='total' id='total' value='$this->productPrice' disabled>
+                        <p></p>
+                        <input class='cart-btn' type='submit' value='Send Request' >
+                        </form>         
+                    </div>
+                  </main>
+
+
+
+
+
         ";
 
 

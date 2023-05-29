@@ -1,126 +1,75 @@
-    <?php
-        
-        session_start();
-        if (isset($_SESSION['user'])) {
-            $user_id=$_SESSION['user_id'];
+<?php
+
+session_start();
+if (isset($_SESSION['user'])) {
+    $user_id=$_SESSION['user_id'];
+
+}
+
+include_once '../classes/dbConnect.class.php';
+$db = new DB();
+$DB = $db->dbConnection();
+$sql = "SELECT * FROM messages WHERE incoming_msg_id = :in_id  ORDER BY id";
+$stmt = $DB->prepare($sql);
+$stmt->execute(array(':in_id'=>$user_id));
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$a=array();
+//foreach($result as $row){
+//        $prod_id = $row['prod_id'];
+//        $out_id =$row['outgoing_msg_id'];
+//        array_push($a,$out_id);
+       /* $sql = "SELECT * FROM products WHERE productID = :id";
+        $stmt = $DB->prepare($sql);
+        $stmt->execute(array(':id'=>$prod_id));
+        $result2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $noRows= $stmt->rowCount();
+        foreach($result2 as $row2){
+            $prodTitle=$row2['productName'];
+            $prodPrice=$row2['price'];
 
         }
-
-        include_once '../classes/dbConnect.class.php';
-        $db = new DB();
-        $DB = $db->dbConnection();
-        $sql = "SELECT * FROM messages WHERE incoming_msg_id = :in_id  ORDER BY id";
-        $stmt = $DB->prepare($sql);
-        $stmt->execute(array(':in_id'=>$user_id));
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $a=array();
-
-    ?>
+        echo "<a href='#' onclick='show_chat(); return false;'><div class='no_chats'>
+        <div class='sent_msg'>
+        <p>id=$prod_id</p>
+        <p>$prodTitle</p>
+        <p>$prodPrice</p>
+        <p>".$row['msg']."</p>
+        </div>
+        </div></a>";*/
+/*}
+$num_unique = array_unique($a);
+foreach($num_unique as $num){
+   
+    $sql = "SELECT * FROM users WHERE userID = :id";
+    $stmt = $DB->prepare($sql);
+    $stmt->execute(array(':id'=>$num));
+    $result2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $noRows= $stmt->rowCount();
+    foreach($result2 as $row2){
+        $username=$row2['username'];
+       
+        $user_id=$row2['userID'];
+    }
+    
+    echo "<a href='#' onclick='show_chat(); return false;'><div class='no_chats'>
+    <div class='sent_msg'>
+    <p>$num</p>
+    <p>title$username</p>
+    </div>
+    </div></a>";
+}*/
+?>
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="ains.css">
 </head>
-
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-
-        <!-- Header Section Begin -->
-        <header class="header">
-           
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="header__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <nav class="header__menu">
-                            <ul>
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="blog.php">Blogs</a></li>
-                            <li><a href="messages.php">Messages</a></li>
-                            <li><a href="myAccount.php">Account</a></li>
-                            <li><a href="AddProducts.php">SELL</a></li>
-                            <li><a href="logout.php">Logout</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                   
-                </div>
-                <div class="humberger__open">
-                    <i class="fa fa-bars"></i>
-                </div>
-            </div>
-        </header>
-
-    <!-- Hero Section Begin -->
-    <section class="hero hero-normal">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>Categories</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Agroproducts</a></li>
-                            <li><a href="#">Farm Machinery</a></li>
-                            <li><a href="#">Feeds & Supplements</a></li>
-                            <li><a href="#">Livestock & Poultry</a></li>
-                            <li><a href="#">Fertilizers</a></li>
-                            <li><a href="#">Pesticides & insecticides</a></li>
-                            <li><a href="#">Agroservices</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
-
-
-
     <div class="connn">
         <div class="no_chats">
             <?php
@@ -182,7 +131,7 @@
         </div>
 
     </div>
-
+</body>
 <script>
    function show_chat(sender_id,my_id){
        
@@ -235,33 +184,4 @@
     }
 
 </script>
-
-  
-
-   
-
-    <!-- Js Plugins -->
-    <script>
-
-function full_article(id){
-    
-    $.get('../classes/admin.class.php',{ action:'full_article', id:id})
-    .done(function(data){
-        $('.blog__item').html(data);
-    });
-}
-</script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-
-
-
-</body>
-
 </html>

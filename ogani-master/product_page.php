@@ -6,31 +6,36 @@ if(!isset($_SESSION['user'])){
     header('location: login.php?error=notLoggedIn ');
     exit();
 }
-
 ?>
+
+
+
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/test.css" type="text/css">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
- 
-  
-</head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- CSS -->
+    <link href="css/test.css" rel="stylesheet">
+    <meta name="robots" content="noindex,follow" />
+
+  </head>
+
 <body>
   <?php
     $user = $_SESSION['user'];
     $user_id = $_SESSION['user_id'];
   ?>
 <div class="containerr">
-  <div class="a">
- 
-  </div>
+  <div class="a"> </div>
   <div class="right">
-  <div class="contacts"> </div>
+  <!-- <div class="contacts"> </div> -->
 
   <div class="modal" id="modal">
     <div class="modal-header">

@@ -1,140 +1,29 @@
 <?php
     session_start();
+    include_once "header.php";
     if(!isset($_SESSION['user'])){
         header('location: login.php?error=notLoggedIn ');
         exit();
     }
-    
+    require_once 'header.php';
     
 ?>
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>MStore</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="style2.css" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-
 <body>
-     <!-- Header Section Begin -->
-     <header class="header">
-           
-           <div class="container">
-               <div class="row">
-                   <div class="col-lg-3">
-                       <div class="header__logo">
-                           <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                       </div>
-                   </div>
-                   <div class="col-lg-8">
-                       <nav class="header__menu">
-                           <ul>
-                           <li><a href="index.php">Home</a></li>
-                           <li><a href="blog.php">Blogs</a></li>
-                           <li><a href="messages.php">Messages</a></li>
-                           <li><a href="myAccount.php">Account</a></li>
-                           <li><a href="AddProducts.php">SELL</a></li>
-                           <li><a href="logout.php">Logout</a></li>
-                           </ul>
-                       </nav>
-                   </div>
-                  
-               </div>
-               <div class="humberger__open">
-                   <i class="fa fa-bars"></i>
-               </div>
-           </div>
-       </header>
-
-   <!-- Hero Section Begin -->
-   <section class="hero hero-normal">
-       <div class="container">
-           <div class="row">
-               <div class="col-lg-3">
-                   <div class="hero__categories">
-                       <div class="hero__categories__all">
-                           <i class="fa fa-bars"></i>
-                           <span>Categories</span>
-                       </div>
-                       <ul>
-                           <li><a href="#">Agroproducts</a></li>
-                           <li><a href="#">Farm Machinery</a></li>
-                           <li><a href="#">Feeds & Supplements</a></li>
-                           <li><a href="#">Livestock & Poultry</a></li>
-                           <li><a href="#">Fertilizers</a></li>
-                           <li><a href="#">Pesticides & insecticides</a></li>
-                           <li><a href="#">Agroservices</a></li>
-                       </ul>
-                   </div>
-               </div>
-               <div class="col-lg-9">
-                   <div class="hero__search">
-                       <div class="hero__search__form">
-                           <form action="#">
-                               <div class="hero__search__categories">
-                                   Categories
-                                   <span class="arrow_carrot-down"></span>
-                               </div>
-                               <input type="text" placeholder="What do yo u need?">
-                               <button type="submit" class="site-btn">SEARCH</button>
-                           </form>
-                       </div>
-                       
-                   </div>
-               </div>
-           </div>
-       </div>
-   </section>
-   <!-- Hero Section End -->
-
-       <!-- Blog Section Begin -->
-       <section class="blog spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-4">
-                    <div class="blog__sidebar">
-                        <div class="blog__sidebar__search">
-                            <form action="#">
-                                <input type="text" placeholder="Search...">
-                                <button type="submit"><span class="icon_search"></span></button>
-                            </form>
-                        </div>
-                        <div class="blog__sidebar__item">
-                            <h4>Categories</h4>
-                            <ul>
-                                <li><a href="#">All</a></li>
-                                <li><a href="#">Life Style</a></li>
-                                <li><a href="#">Food</a></li>
-                                <li><a href="#">Life Style</a></li>
-                                <li><a href="#">Travel</a></li>
-                            </ul>
-                        </div>
-      
-        
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-7">
-
-            </div>
-        </div>
-    </section>
+    <header>
+    
+    </header>
    
     <div class="profile_Records">
   
@@ -144,7 +33,7 @@
          
         </div>  
     </div>
-      <div class="sales">
+        <div class="sales">
           <h1>Sales</h1>
         <table >
         <thead>
@@ -201,7 +90,10 @@
     $('.adispRecords').html(data);
   });
 
-  
+  $.get('../classes/myaccount.class.php',{ action:'profile'})
+  .done(function(data){
+    $('.prof').html(data);
+  });
   console.log(error);
   }
   function edit(id){

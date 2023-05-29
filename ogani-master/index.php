@@ -107,8 +107,8 @@
                         <ul>
                         <li><a href="index.php">Home</a></li>
                         <li><a href="blog.php">Blogs</a></li>
-                        <li><a href="messages.php">My Messages</a></li>
-                        <li><a href="myAccount.php">My Account</a></li>
+                        <li><a href="messages.php">Messages</a></li>
+                        <li><a href="myAccount.php">Account</a></li>
                         <li><a href="AddProducts.php">SELL</a></li>
                         <li>
                             <?php if ($loggedin) : ?>
